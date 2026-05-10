@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark Space | Premium Markdown Workspace</title>
+    <!-- Fonts: Inter & Geist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body>
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.body.className = 'theme-' + theme;
+      })();
+    </script>
+    <div id="app">
+      <!-- Content will be injected by app.js -->
+      <div id="loader" class="screen-center">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
