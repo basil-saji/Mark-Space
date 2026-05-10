@@ -504,6 +504,12 @@ button {
 ::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
 
 /* Mobile Adjustments & Utility */
+.delete-project-btn i,
+.btn i,
+.fab i {
+  pointer-events: none;
+}
+
 .delete-project-btn {
   position: absolute;
   top: 1rem;

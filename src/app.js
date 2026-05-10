@@ -212,15 +212,19 @@ function renderProjectList() {
 
   // Use event delegation or re-attach
   projectsContainer.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => openProject(card.dataset.id));
+    card.addEventListener('click', (e) => {
+      // Ensure we didn't click the delete button
+      if (e.target.closest('.delete-project-btn')) return;
+      openProject(card.dataset.id);
+    });
   });
 
   projectsContainer.querySelectorAll('.delete-project-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => deleteProject(btn.dataset.id, e));
-  });
-
-  createIcons({
-    icons: { FileText, Trash2 }
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      deleteProject(btn.dataset.id, e);
+    });
   });
 }
 

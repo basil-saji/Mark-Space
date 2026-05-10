@@ -28,7 +28,7 @@ export function generateTOC(markdown) {
 renderer.code = function({ text, lang }) {
   const language = (lang && hljs.getLanguage(lang)) ? lang : 'plaintext';
   const highlighted = hljs.highlight(text, { language }).value;
-  return `<pre data-lang="${language}"><code class="hljs language-${language}">${highlighted}</code></button></pre>`;
+  return `<pre data-lang="${language}"><code class="hljs language-${language}">${highlighted}</code></pre>`;
 };
 
 // Custom renderer to add IDs to headings for jumping
